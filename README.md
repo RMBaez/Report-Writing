@@ -29,7 +29,7 @@ I owe you one!
 
 ======
 Email Artifacts
-======
+
 
 Sending Address:
 emailsecalert1@gmail.com
@@ -58,7 +58,7 @@ Date and Time:
 
 ======
 Web Artifacts
-======
+
 
 Full URL (sanitized):
 hxxps://outlook-security.emailsecalerts[.]net/index/2020/OWA.php?
@@ -68,7 +68,7 @@ hxxps://emailsecalerts[.]net
 
 ======
 Investigation
-======
+
 
 Email is themed to look like a security alert from Outlook, claiming the mailbox will be closed unless the recipients confirm their identity. Tells users to click a button. Using Outlook logos.
 Reverse DNS search shows that the email has definitely come from Gmail.
