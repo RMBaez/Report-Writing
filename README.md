@@ -1,148 +1,139 @@
-<p align="center">
-<img width="1440" alt="image" 
-  src="https://github.com/RMBaez/VM-Web-Server-Deployment/assets/170957530/556252cb-981e-4992-9262-305d5013b854">
+<img width="579" alt="image" src="https://github.com/RMBaez/Report-Writing/assets/170957530/b2dd0e1d-75ee-4a35-973c-a85ae895d560">
+
 
 
 </p>
 
-<h1>Azure: Create a Virtual Machine and Deploy a Web Server</h1>
-In this tutorial, we create a Virtual Machine in Azure to deploy a web server, specifically a Nextcloud server. We will also observe how to use Bastion to connect to the machine via SSH, without exposing an external port to the Internet, and then installing a simple Nextcloud server and make the Virtual Machine available.  <br />
+<h1>Report Writing Exercise</h1>
+In this activity I test and my ability to write a phishing report which is a crucial part of phishing analysis when working for organizations.  <br />
 
 
 
 <h2>Environments and Technologies Used</h2>
 
-- Microsoft Azure VM
-- Virtual Network
-- Bastion
-- Network Protocol (SSH)
+- Microsoft Words
 
-<h2>Operating Systems Used </h2>
+<h2>Challenge Brief</h2>
 
-- Ubuntu Server
-- Nextcloud
+A fellow security analyst began investigating a phishing email but has had to stop and join an incident response team with a potential system compromise, so they have passed over their rough notes to you. Whilst the investigating analyst had almost completed their assessment, they didn’t have time to write up their report and select appropriate defensive measures. Using the analyst’s notes you need to take over their investigation and write a full report detailing the actions that they took in a neat and presentable format, and suggest defensive measures that would best protect the company. The initial analyst has mentioned that you should just keep the case for yourself, and talk as if you have completed the actions instead of referring to him throughout the report.
 
-<h2>High-Level Steps</h2>
+<h2>Fellow Analyst Report</h2>
 
--Task 1: Create a Resource Group
-
--Task 2: Create a Virtual Network and a subnet
-
--Task 3: Protect a subnet using a Network Security Group
-
--Task 4: Deploy Bastion to connect to a Virtual Machine
-
--Task 5: Create an Ubuntu Server Virtual Machine
-
--Task 6: Install Nextcloud by connecting via SSH using Bastion
-
--Task 7: Publish an IP
-
--Task 8: Create a DNS label
-
-<h2>Actions and Observations</h2>
 
 <p>
-<img width="1440" alt="image" src="https://github.com/RMBaez/VM-Web-Server-Deployment/assets/170957530/f71be315-3a9c-4d99-b026-840fd326bb64">
-<img width="1440" alt="image" src="https://github.com/RMBaez/VM-Web-Server-Deployment/assets/170957530/66735504-bc37-435f-8bc4-c0ab5969e242">
+Hey mate! Sorry for leaving this case with you, had to jump in to an incident response meeting.
+You can find my notes below, if you can write that report that would be awesome.
 
-</p>
-<p>
-Task 1.
-</p>
-<br />
+I owe you one!
 
-<p>
-<img width="1440" alt="image" src="https://github.com/RMBaez/VM-Web-Server-Deployment/assets/170957530/7624304b-3c63-46f0-bc48-4dea52f67de3">
-<img width="1440" alt="image" src="https://github.com/RMBaez/VM-Web-Server-Deployment/assets/170957530/a37ee951-5349-4325-8600-72fd2954ab71">
-<img width="1440" alt="image" src="https://github.com/RMBaez/VM-Web-Server-Deployment/assets/170957530/5044e55a-3c45-4ccd-bd44-02ae47806a37">
 
+======
+Email Artifacts
+======
+
+Sending Address:
+emailsecalert1@gmail.com
+
+Subject Line:
+Your Email Will be Locked! Act NOW!
+
+Recipients:
+john.smith@dicksonunited.co.uk
+alice.cooper@dicksonunited.co.uk
+jacon.long@dicksonunited.co.uk
+fred.johnson@dicksonunited.co.uk
+pickle.rick@dicksonunited.co.uk
+
+Sending Server IP:
+209.85.222.173
+
+Reverse DNS:
+mail-qk1-f173.google.com (Gmail)
+
+Reply-To:
+emailsecalert1@gmail.com
+
+Date and Time:
+3:21 PM Monday 1st June 2020
+
+======
+Web Artifacts
+======
+
+Full URL (sanitized):
+hxxps://outlook-security.emailsecalerts[.]net/index/2020/OWA.php?
+
+Root Domain:
+hxxps://emailsecalerts[.]net
+
+======
+Investigation
+======
+
+Email is themed to look like a security alert from Outlook, claiming the mailbox will be closed unless the recipients confirm their identity. Tells users to click a button. Using Outlook logos.
+Reverse DNS search shows that the email has definitely come from Gmail.
+URL2PNG shows that the full URL is hosting an Outlook Web Access credential harvester. Requires email and password.
+VirusTotal shows this domain has been flagged for malicious/phishing activity.
+Checking the SIEM and EDR, no users have clicked on the link and created a network connection to the domain yet.
+Checking email gateway shows no users have replied to the email. No other recipients than those stated above.
+
+Domain emailsecalerts[.]net is being used purely for malicious purposes. No legitimate reason for employees to visit this domain. Domain has been alive for 25 days and the name is somewhat typo squatting to make recipients believe it is a legitimate domain related to email security.
+
+
+<h2>My Report</h2>
   
-</p>
-<p>
-Task 2.
-</p>
-<br />
-
-<p>
-<img width="1440" alt="image" src="https://github.com/RMBaez/VM-Web-Server-Deployment/assets/170957530/d20fd8e1-17a9-4ef9-89b5-e568b3e26947">
-<img width="1440" alt="image" src="https://github.com/RMBaez/VM-Web-Server-Deployment/assets/170957530/03bf3e9d-f270-4c0a-883d-5b609eb98415">
-<img width="1440" alt="image" src="https://github.com/RMBaez/VM-Web-Server-Deployment/assets/170957530/a293e2bf-9bd0-4b6c-bcbf-ac9aef403b37">
+</p>Email Description and Artifacts Collected</p>
 
 
-</p>
-<p>
-Task 3.
-</p>
-<br />
+Sending Address: emailsecalert1@gmail.com
 
+Subject Line: Your Email Will be Locked! Act NOW!
 
-<p>
-<img width="1440" alt="image" src="https://github.com/RMBaez/VM-Web-Server-Deployment/assets/170957530/74581312-7e76-4e6f-8a9a-81c030d008d6">
-<img width="1440" alt="image" src="https://github.com/RMBaez/VM-Web-Server-Deployment/assets/170957530/3a337009-05ef-4a98-85b1-4b09f0ea061c">
-<img width="1440" alt="image" src="https://github.com/RMBaez/VM-Web-Server-Deployment/assets/170957530/467134de-71d3-41aa-8556-3399b3c2c9cf">
-<img width="1440" alt="image" src="https://github.com/RMBaez/VM-Web-Server-Deployment/assets/170957530/8ec44fa2-d8a2-409e-89c8-b37dec1016e1">
+Recipients:
+john.smith@dicksonunited.co.uk
+alice.cooper@dicksonunited.co.uk
+jacon.long@dicksonunited.co.uk
+fred.johnson@dicksonunited.co.uk
+pickle.rick@dicksonunited.co.uk
 
+Sending Server IP: 209.85.222.173
 
-</p>
-<p>
-Task 4.
-</p>
-<br />
+Reverse DNS: mail-qk1-f173.google.com (Gmail)
 
+Reply-To: emailsecalert1@gmail.com
 
-<p>
-<img width="1440" alt="image" src="https://github.com/RMBaez/VM-Web-Server-Deployment/assets/170957530/f1e68674-93ab-4bf7-8111-e28bc506523c">
-<img width="1440" alt="image" src="https://github.com/RMBaez/VM-Web-Server-Deployment/assets/170957530/888a0f97-afb1-4441-a07c-ab9e1e247ed4">
-<img width="1440" alt="image" src="https://github.com/RMBaez/VM-Web-Server-Deployment/assets/170957530/e4b4a32c-a4ca-4b36-94d1-7b1bf82115d9">
-<img width="1440" alt="image" src="https://github.com/RMBaez/VM-Web-Server-Deployment/assets/170957530/ed39852d-800e-48fc-9a46-18840ac308b5">
-<img width="1440" alt="image" src="https://github.com/RMBaez/VM-Web-Server-Deployment/assets/170957530/62ae8e2a-19eb-47c2-b8aa-b166a94133e0">
+Date and Time: 3:21 PM Monday 1st June 2020
 
+Full URL (sanitized): hxxps://outlook-security.emailsecalerts[.]net/index/2020/OWA.php?
 
-</p>
-<p>
-Task 5.
-</p>
-<br />
+Root Domain: hxxps://emailsecalerts[.]net
 
-<p>
-<img width="1440" alt="image" src="https://github.com/RMBaez/VM-Web-Server-Deployment/assets/170957530/c12b2099-50df-4773-aad5-ee64fb87b302">
-<img width="1440" alt="image" src="https://github.com/RMBaez/VM-Web-Server-Deployment/assets/170957530/dc590f6f-9928-4f14-beed-6f57ef908dee">
-<img width="1440" alt="image" src="https://github.com/RMBaez/VM-Web-Server-Deployment/assets/170957530/88d6788b-d061-4fce-a063-fcf9880f680e">
-<img width="1440" alt="image" src="https://github.com/RMBaez/VM-Web-Server-Deployment/assets/170957530/e6107b8a-09f7-4e5d-a796-058786ddface">
-<img width="1440" alt="image" src="https://github.com/RMBaez/VM-Web-Server-Deployment/assets/170957530/73c471d3-c3ac-4cce-9d88-5b18b5757101">
-<img width="1440" alt="image" src="https://github.com/RMBaez/VM-Web-Server-Deployment/assets/170957530/b3c4bbca-198b-4345-b742-e37e3de13241">
+Looking at the reported email in the Outlook email client, this message is impersonating an Outlook security alert using branding such as Outlook logos. The email is informing recipients that their mailboxes will be closed unless they confirm their identity, where they are directed to click on a button, likely leading to a credential harvester based on the context of the email.
 
+ 
 
+</p>Artifact Analysis</p>
 
-</p>
-<p>
-Task 6.
-</p>
-<br />
+-Checking the email gateway shows that there have been no outgoing emails to the sending address, therefore no recipients have replied to the sender.
 
+-A reverse DNS search on the sending server IP shows that this email has definitely originated from Gmail, and not Microsoft.
 
-<p>
-<img width="1440" alt="image" src="https://github.com/RMBaez/VM-Web-Server-Deployment/assets/170957530/9453de4e-18b5-404e-b8ba-7c14be5ec788">
-<img width="1440" alt="image" src="https://github.com/RMBaez/VM-Web-Server-Deployment/assets/170957530/8c09a4ee-179c-4acc-9a33-09f963d5bd46">
-<img width="1440" alt="image" src="https://github.com/RMBaez/VM-Web-Server-Deployment/assets/170957530/ecdc2629-8b43-47a0-8bc4-8317259b73fc">
-<img width="1440" alt="image" src="https://github.com/RMBaez/VM-Web-Server-Deployment/assets/170957530/2e375f14-bea1-4b84-9b1c-3f03134490ab">
+-URL2PNG analysis shows that the full URL is an Outlook credential harvester, asking users to enter their email and password.
 
+-A VirusTotal search for the domain shows that it has been flagged for malicious and phishing activity, therefore it is known to be malicious within the security community.
 
-</p>
-<p>
-Task 7.
-</p>
-<br />
+-Checking the SIEM and EDR no employees have made a network connection to the malicious domain, so no recipients have clicked on the link in the email at this time.
 
+-The domain is also attempting to typo squat or appear as a legitimate domain related to email security alerts, trying to make the attack more believable to targets.
 
-<p>
-<img width="1440" alt="image" src="https://github.com/RMBaez/VM-Web-Server-Deployment/assets/170957530/a7b4a909-76cb-4d5d-b662-d7179dea0a31">
-<img width="1440" alt="image" src="https://github.com/RMBaez/VM-Web-Server-Deployment/assets/170957530/bde53088-4c5d-4186-bcc3-1258560a3151">
+ 
 
+</p>Suggested Defensive Measures</p>
 
-</p>
-<p>
-Task 8.
-</p>
-<br />
+As the sender is using a Gmail address, the most appropriate action would be to block this specific mailbox to prevent any more incoming malicious emails from this sender.
+
+Requesting an email gateway block for the sending address “emailsecalert1@gmail.com“.
+
+The domain has been recognized as malicious, and there is no business justification for any employees needing to access this site. As it has a malicious reputation on VirusTotal, and analysis has shown that it is hosting a credential harvester, the entire domain can be blocked on the web proxy, preventing employees from connecting to the site. This will also make future phishing attacks using this same domain ineffective.
+
+Requesting a web proxy block for the domain “hxxps://emailsecalerts[.]net“.
