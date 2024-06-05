@@ -84,6 +84,10 @@ Domain emailsecalerts[.]net is being used purely for malicious purposes. No legi
   
 </p>Email Description and Artifacts Collected</p>
 
+</p>
+<p>
+</p>
+<br />
 
 Sending Address: emailsecalert1@gmail.com
 
@@ -110,9 +114,20 @@ Root Domain: hxxps://emailsecalerts[.]net
 
 Looking at the reported email in the Outlook email client, this message is impersonating an Outlook security alert using branding such as Outlook logos. The email is informing recipients that their mailboxes will be closed unless they confirm their identity, where they are directed to click on a button, likely leading to a credential harvester based on the context of the email.
 
+
+</p>
+<p>
+</p>
+<br />
  
 
 </p>Artifact Analysis</p>
+
+</p>
+<p>
+</p>
+<br />
+
 
 -Checking the email gateway shows that there have been no outgoing emails to the sending address, therefore no recipients have replied to the sender.
 
@@ -126,9 +141,19 @@ Looking at the reported email in the Outlook email client, this message is imper
 
 -The domain is also attempting to typo squat or appear as a legitimate domain related to email security alerts, trying to make the attack more believable to targets.
 
+</p>
+<p>
+</p>
+<br />
  
 
 </p>Suggested Defensive Measures</p>
+
+
+</p>
+<p>
+</p>
+<br />
 
 As the sender is using a Gmail address, the most appropriate action would be to block this specific mailbox to prevent any more incoming malicious emails from this sender.
 
